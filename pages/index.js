@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
+import Hero from '../components/Hero';
 
 import esfandtvPfp from '../public/esfandtv.png';
 import asmongoldPfp from '../public/asmongold.png';
@@ -18,6 +19,7 @@ const streamerPfps = [esfandtvPfp, asmongoldPfp, cyrPfp, emiruPfp, extraemilyPfp
 
 export default function Home() {
     const [streamerObjects, setStreamerObjects] = useState([]);
+    const [sidebarVisible, setSidebarVisible] = useState(true);
     
     useEffect(() => {
         let newObjects = [];
@@ -55,8 +57,11 @@ export default function Home() {
 
     return (
         <div>
-            <Navbar/>
-            <Sidebar streamerObjects={streamerObjects}/>
+            <Navbar sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
+            <div className='flex w-screen h-screen'>
+                <Sidebar streamerObjects={streamerObjects} sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
+                <Hero/>
+            </div>
         </div>
     )
 }
