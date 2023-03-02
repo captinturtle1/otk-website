@@ -14,7 +14,7 @@ import sodapoppinPfp from '../public/sodapoppin.png';
 import nmplolPfp from '../public/nmplol.png';
 import mizkifPfp from '../public/mizkif.png';
 
-const streamersNames = ['EsfandTV', 'Asmongold', 'cyr', 'Emiru', 'ExtraEmily', 'Tectone', 'sodepoppin', 'Nmplol', 'Mizkif']
+const streamersNames = ['EsfandTV', 'Asmongold', 'cyr', 'Emiru', 'ExtraEmily', 'Tectone', 'sodapoppin', 'Nmplol', 'Mizkif']
 const streamerPfps = [esfandtvPfp, asmongoldPfp, cyrPfp, emiruPfp, extraemilyPfp, tectonePfp, sodapoppinPfp, nmplolPfp, mizkifPfp]
 
 export default function Home() {
@@ -60,7 +60,7 @@ export default function Home() {
             <Navbar sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
             <div className='flex w-screen h-screen'>
                 <Sidebar streamerObjects={streamerObjects} sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
-                <Hero/>
+                <Hero streamerObjects={streamerObjects}/>
             </div>
         </div>
     )
