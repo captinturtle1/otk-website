@@ -3,6 +3,10 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { FaCircle } from 'react-icons/fa';
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 export default function Sidebar({streamerObjects, sidebarVisible}) {
     const [expanded, setExpanded] = useState(false);
 
@@ -20,7 +24,7 @@ export default function Sidebar({streamerObjects, sidebarVisible}) {
                                     {streamer.live ? (
                                         <div className='flex gap-1'>
                                             <FaCircle className='text-[10px] mt-[8px] text-red-500'/>
-                                            <div className='text-black font-semi'>{streamer.viewers}</div>
+                                            <div className='text-black font-semi'>{numberWithCommas(streamer.viewers)}</div>
                                         </div>
                                     ):(
                                         <div className='text-zinc-600'>Offline</div>
@@ -41,7 +45,7 @@ export default function Sidebar({streamerObjects, sidebarVisible}) {
                             {streamer.live ? (
                                 <div className='flex gap-1'>
                                     <FaCircle className='text-[10px] mt-[8px] text-red-500'/>
-                                    <div className='text-black font-semi'>{streamer.viewers}</div>
+                                    <div className='text-black font-semi'>{numberWithCommas(streamer.viewers)}</div>
                                 </div>
                             ):(
                                 <div className='text-zinc-600'>Offline</div>
