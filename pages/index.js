@@ -13,7 +13,7 @@ import sodapoppinPfp from '../public/sodapoppin.png';
 import nmplolPfp from '../public/nmplol.png';
 import mizkifPfp from '../public/mizkif.png';
 
-const streamersNames = ['esfandtv', 'asmongold', 'cyr', 'emiru', 'extraemily', 'tectone', 'sodepoppin', 'nmplol', 'mizkif']
+const streamersNames = ['EsfandTV', 'Asmongold', 'cyr', 'Emiru', 'ExtraEmily', 'Tectone', 'sodepoppin', 'Nmplol', 'Mizkif']
 const streamerPfps = [esfandtvPfp, asmongoldPfp, cyrPfp, emiruPfp, extraemilyPfp, tectonePfp, sodapoppinPfp, nmplolPfp, mizkifPfp]
 
 export default function Home() {
@@ -37,14 +37,16 @@ export default function Home() {
             console.log(response.data.data);
             for (let i = 0; i < response.data.data.length; i++) {
                 for (let j = 0; j < streamersNames.length; j++) {
-                    if (response.data.data[i].user_login == streamersNames[j]) {
+                    if (response.data.data[i].user_login.toLowerCase() == streamersNames[j].toLowerCase()) {
                         console.log(response.data.data[i].user_login, "is", streamersNames[j]);
                         newObjects[j].viewers = response.data.data[i].viewer_count;
                         newObjects[j].live = true;
-                        setStreamerObjects([...newObjects]);
+                        
                     }
                 }
             }
+            newObjects.sort((a, b) => b.viewers - a.viewers);
+            setStreamerObjects([...newObjects]);
         })
         .catch((err) => {
           console.log(err);
