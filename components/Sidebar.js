@@ -8,7 +8,7 @@ export default function Sidebar({streamerObjects}) {
 
     console.log(streamerObjects);
     const streamerList = streamerObjects.map((streamer, index) =>
-        <>
+        <div className='select-none'>
             {!expanded ? (
                 <>
                     {index < 4 ? (
@@ -50,13 +50,15 @@ export default function Sidebar({streamerObjects}) {
                     </a>
                 </div>
             )}
-        </>
+        </div>
     );
 
     return (
     <div className='bg-zinc-300 h-screen w-64 pt-16 select-none flex'>
-        <div className='mx-auto pt-12 flex flex-col gap-5'>
-            {streamerList}
+        <div className='mx-auto pt-12 flex flex-col my-2'>
+            <div className='overflow-x-scroll flex flex-col gap-2'>
+                {streamerList}
+            </div>
             {!expanded ? (
                 <div className='mx-auto font-bold cursor-pointer' onClick={() => setExpanded(true)}>show more</div>
             ):(
