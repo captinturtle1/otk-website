@@ -58,8 +58,8 @@ export default function Sidebar({streamerObjects, sidebarVisible}) {
     );
 
     return (
-    <div className={sidebarVisible ? 'bg-zinc-200 h-screen w-64 opacity-100 pt-16 select-none flex flex-shrink-0 z-40 transition-all' : 'bg-zinc-200 h-screen w-0 opacity-0 pt-16 select-none flex flex-shrink-0 z-40 transition-all'}>
-        <div className='mx-auto pt-12 flex flex-col my-2'>
+    <div className={sidebarVisible ? ' w-64 flex-shrink-0 z-40 transition-all' : 'w-0 flex-shrink-0 z-40 transition-all'}>
+        <div className={sidebarVisible ? 'bg-zinc-200 h-screen flex flex-col pt-24 w-64 fixed left-0 transition-all p-6': 'bg-zinc-200 h-screen flex flex-col pt-24 w-64 fixed left-[-15%] transition-all p-6'}>
             <div className='overflow-x-scroll flex flex-col gap-2'>
                 {streamerList}
             </div>
