@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Hero from '../components/Hero';
+import Events from '../components/Events';
 
 import esfandtvPfp from '../public/esfandtv.png';
 import asmongoldPfp from '../public/asmongold.png';
@@ -58,9 +59,12 @@ export default function Home() {
     return (
         <div>
             <Navbar sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
-            <div className='flex w-screen h-screen'>
+            <div className='flex w-screen'>
                 <Sidebar streamerObjects={streamerObjects} sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
-                <Hero streamerObjects={streamerObjects}/>
+                <div className='w-screen'>
+                    <Hero streamerObjects={streamerObjects}/>
+                    <Events/>
+                </div>
             </div>
         </div>
     )
