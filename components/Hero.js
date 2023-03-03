@@ -15,10 +15,10 @@ export default function Hero({streamerObjects}) {
     },[streamerObjects]);
 
     return (
-    <div className='h-full w-full flex relative'>
+    <div className='h-[900px] w-full flex relative'>
         {isAnyoneLive ? (
-            <div className='mx-auto flex flex-col mt-20'>
-                    <div className="flex gap-2 w-40 bg-zinc-400 bg-opacity-0 p-1 rounded-xl transition-all">
+            <div className='mx-auto flex flex-col mt-24'>
+                    <div className="flex gap-2 w-40 bg-zinc-400 bg-opacity-0 pb-5 rounded-xl transition-all">
                         <Image height={50} width={50} src={streamerObjects[0].pfp} className='rounded-full'/>
                         <div className='my-auto flex flex-col'>
                             <div className='font-semibold text-lg'>{streamerObjects[0].name}</div>
@@ -29,14 +29,14 @@ export default function Hero({streamerObjects}) {
                         <iframe
                             src={`https://player.twitch.tv/?channel=${streamerObjects[0].name}&parent=localhost&muted=true`}
                             parent="localhost"
-                            height="648"
-                            width="1152"
+                            height="594"
+                            width="1056"
                             className=''
                         />
                         <iframe src={`https://www.twitch.tv/embed/${streamerObjects[0].name}/chat?parent=localhost&darkpopout`}
                             parent="localhost"
-                            height="648"
-                            width="250"
+                            height="594"
+                            width="300"
                             className=''
                             >
                         </iframe>
