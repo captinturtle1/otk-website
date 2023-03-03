@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
+import ytLogo from '../public/ytLogo.jpg';
+
 import { FaLongArrowAltRight } from 'react-icons/fa';
 
-export default function Hero({streamerObjects}) {
+export default function Hero({streamerObjects, youtubeData}) {
     const [isAnyoneLive, setIsAnyoneLive] = useState(false);
 
     useEffect(() => {
@@ -38,12 +40,33 @@ export default function Hero({streamerObjects}) {
                             height="594"
                             width="300"
                             className=''
-                            >
-                        </iframe>
+                        />
                     </div>
                 <a href={`https://twitch.tv/${streamerObjects[0].name}`} className='m-auto text-xl font-bold mt-8 flex'>Watch on Twitch<FaLongArrowAltRight className='mt-[6px] ml-2'/></a>
             </div>
-        ):(<></>)}
+        ):(
+            <div className='mx-auto flex flex-col mt-24'>
+                    <div className="flex gap-2 w-64 bg-zinc-400 bg-opacity-0 pb-5 rounded-xl transition-all">
+                        <Image height={50} width={50} src={ytLogo} className='rounded-full'/>
+                        <div className='my-auto flex flex-col'>
+                            <div className='font-semibold text-lg'>Latest Video</div>
+                        </div>
+                    </div>
+                    <div className='flex relative'>
+                        <div className='bg-yellow-400 w-full h-full absolute translate-x-3 translate-y-3 -z-10'/>
+                        <iframe
+                            width="1056"
+                            height="594"
+                            src={`https://www.youtube.com/embed/${youtubeData}`}
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                        />
+                    </div>
+                <a href={`https://www.youtube.com/watch?v=${youtubeData}`} className='m-auto text-xl font-bold mt-8 flex'>Watch on Youtube<FaLongArrowAltRight className='mt-[6px] ml-2'/></a>
+            </div>
+        )}
     </div>
   )
 }  
