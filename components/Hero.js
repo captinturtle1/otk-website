@@ -4,6 +4,11 @@ import Image from 'next/image';
 import ytLogo from '../public/ytLogo.jpg';
 
 import { FaLongArrowAltRight } from 'react-icons/fa';
+import { IoPersonSharp } from 'react-icons/io5';
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 export default function Hero({streamerObjects, youtubeData}) {
     const [isAnyoneLive, setIsAnyoneLive] = useState(false);
@@ -20,14 +25,19 @@ export default function Hero({streamerObjects, youtubeData}) {
     <div className='h-[900px] w-full flex relative'>
         {isAnyoneLive ? (
             <div className='mx-auto flex flex-col mt-24'>
-                    <div className="flex gap-2 w-40 bg-zinc-400 bg-opacity-0 pb-5 rounded-xl transition-all">
-                        <Image height={50} width={50} src={streamerObjects[0].pfp} className='rounded-full'/>
+                    <div className="flex gap-2 bg-zinc-400 bg-opacity-0 pb-5 rounded-xl transition-all">
+                        <Image src={streamerObjects[0].pfp} className='rounded-full w-16 h-16 my-auto drop-shadow'/>
                         <div className='my-auto flex flex-col'>
-                            <div className='font-semibold text-lg'>{streamerObjects[0].name}</div>
+                            <div className='font-bold text-xl'>{streamerObjects[0].name}</div>
+                            <div className='font-semibold'>{numberWithCommas(streamerObjects[0].title)}</div>
+                            <div className='flex gap-1'>
+                                <IoPersonSharp className='text-red-400 my-auto'/>
+                                <div>{numberWithCommas(streamerObjects[0].viewers)}</div>
+                            </div>
                         </div>
                     </div>
                     <div className='flex relative'>
-                        <div className='bg-yellow-400 w-full h-full absolute translate-x-3 translate-y-3 -z-10'/>
+                        <div className='bg-yellow-400 w-full h-full absolute translate-x-3 translate-y-3 -z-10 drop-shadow-xl'/>
                         <iframe
                             src={`https://player.twitch.tv/?channel=${streamerObjects[0].name}&parent=localhost&muted=true`}
                             parent="localhost"
@@ -53,7 +63,7 @@ export default function Hero({streamerObjects, youtubeData}) {
                         </div>
                     </div>
                     <div className='flex relative'>
-                        <div className='bg-yellow-400 w-full h-full absolute translate-x-3 translate-y-3 -z-10'/>
+                        <div className='bg-yellow-400 w-full h-full absolute translate-x-3 translate-y-3 -z-10 drop-shadow-xl'/>
                         <iframe
                             width="1056"
                             height="594"

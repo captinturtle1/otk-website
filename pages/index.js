@@ -30,7 +30,8 @@ export default function Home() {
                 name: streamersNames[i],
                 pfp: streamerPfps[i],
                 viewers: 0,
-                live: false
+                live: false,
+                title: ''
             }
             newObjects.push(newObject)
         }
@@ -45,7 +46,7 @@ export default function Home() {
                         console.log(response.data.data[i].user_login, "is", streamersNames[j]);
                         newObjects[j].viewers = response.data.data[i].viewer_count;
                         newObjects[j].live = true;
-                        
+                        newObjects[j].title = response.data.data[i].title;
                     }
                 }
             }
