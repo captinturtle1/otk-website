@@ -21,6 +21,7 @@ const streamerPfps = [esfandtvPfp, asmongoldPfp, cyrPfp, emiruPfp, extraemilyPfp
 export default function Home() {
     const [streamerObjects, setStreamerObjects] = useState([]);
     const [sidebarVisible, setSidebarVisible] = useState(true);
+    const [youtubeData, setYoutubeData] = useState('')
     
     useEffect(() => {
         let newObjects = [];
@@ -54,6 +55,15 @@ export default function Home() {
         .catch((err) => {
           console.log(err);
         })
+        fetch(`/api/getYoutubeData/`, {method: 'POST'})
+        .then((jsonResponse) => jsonResponse.json())
+        .then((response) => {
+            console.log(response.data.items[0].id.videoId);
+            setYoutubeData(response.data.items[0].id.videoId);
+        })
+        .catch((err) => {
+          setYoutubeData('KgaAIpkhDH0');
+        })
     },[]);
 
     return (
@@ -62,7 +72,7 @@ export default function Home() {
             <div className='flex w-screen'>
                 <Sidebar streamerObjects={streamerObjects} sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
                 <div className='w-screen'>
-                    <Hero streamerObjects={streamerObjects}/>
+                    <Hero streamerObjects={streamerObjects} youtubeData={youtubeData}/>
                     <Events/>
                 </div>
             </div>
