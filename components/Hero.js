@@ -6,8 +6,8 @@ import ytLogo from '../public/ytLogo.jpg';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import { IoPersonSharp } from 'react-icons/io5';
 
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+function numberWithCommas(numberToFormat) {
+    return numberToFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 export default function Hero({streamerObjects, youtubeData}) {

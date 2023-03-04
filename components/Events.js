@@ -3,7 +3,33 @@ import Image from 'next/image';
 
 import { eventDetails } from './eventDetails';
 
-import { FaTv } from 'react-icons/fa';
+import { FaTv, FaRegClock } from 'react-icons/fa';
+
+function getOrdinal(n) {
+    let ord = 'th';
+  
+    if (n % 10 == 1 && n % 100 != 11)
+    {
+      ord = 'st';
+    }
+    else if (n % 10 == 2 && n % 100 != 12)
+    {
+      ord = 'nd';
+    }
+    else if (n % 10 == 3 && n % 100 != 13)
+    {
+      ord = 'rd';
+    }
+  
+    return n + ord;
+  }
+  
+
+function unixToLocalDate(unix) {
+    let date = new Date(unix * 1000);
+
+    return date.toLocaleString('en-gb',{month: 'long',}) + ' ' + getOrdinal(date.toLocaleString('en-gb',{day: 'numeric',})) + ', ' + date.toLocaleString('en-gb', {hour: 'numeric', hour12: true}).replace(/\s+/g, '');;
+}
 
 export default function Events() {
     const [isAnyoneLive, setIsAnyoneLive] = useState(false);
@@ -26,8 +52,8 @@ export default function Events() {
                             <div>{event.channel}</div>
                         </div>
                         <div className='ml-12 mb-10 flex gap-2'>
-                            <FaTv className='my-auto'/>
-                            <div>{event.date}</div>
+                            <FaRegClock className='my-auto'/>
+                            <div suppressHydrationWarning>{unixToLocalDate(event.date)}</div>
                         </div>
                     </div>
                 </div>

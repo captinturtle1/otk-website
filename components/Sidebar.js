@@ -3,8 +3,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { FaCircle } from 'react-icons/fa';
 
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+function numberWithCommas(numberToFormat) {
+    return numberToFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 export default function Sidebar({streamerObjects, sidebarVisible}) {
