@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Hero from '../components/Hero';
 import Events from '../components/Events';
+import Videos from '../components/Videos';
 
 import esfandtvPfp from '../public/esfandtv.png';
 import asmongoldPfp from '../public/asmongold.png';
@@ -21,7 +22,7 @@ const streamerPfps = [esfandtvPfp, asmongoldPfp, cyrPfp, emiruPfp, extraemilyPfp
 export default function Home() {
     const [streamerObjects, setStreamerObjects] = useState([]);
     const [sidebarVisible, setSidebarVisible] = useState(true);
-    const [youtubeData, setYoutubeData] = useState('')
+    const [otkVideoId, setOtkVideoId] = useState('')
     
     useEffect(() => {
         let newObjects = [];
@@ -60,10 +61,11 @@ export default function Home() {
         .then((jsonResponse) => jsonResponse.json())
         .then((response) => {
             console.log(response.data.items[0].id.videoId);
-            setYoutubeData(response.data.items[0].id.videoId);
+            console.log(response);
+            setOtkVideoId(response.data.items[0].id.videoId);
         })
         .catch((err) => {
-          setYoutubeData('KgaAIpkhDH0');
+            setOtkVideoId('KgaAIpkhDH0');
         })
     },[]);
 
@@ -73,8 +75,9 @@ export default function Home() {
             <div className='flex w-screen'>
                 <Sidebar streamerObjects={streamerObjects} sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
                 <div className='w-screen'>
-                    <Hero streamerObjects={streamerObjects} youtubeData={youtubeData}/>
+                    <Hero streamerObjects={streamerObjects} otkVideoId={otkVideoId}/>
                     <Events/>
+                    <Videos/>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ function numberWithCommas(numberToFormat) {
     return numberToFormat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-export default function Hero({streamerObjects, youtubeData}) {
+export default function Hero({streamerObjects, otkVideoId}) {
     const [isAnyoneLive, setIsAnyoneLive] = useState(false);
 
     useEffect(() => {
@@ -67,14 +67,14 @@ export default function Hero({streamerObjects, youtubeData}) {
                         <iframe
                             width="1056"
                             height="594"
-                            src={`https://www.youtube.com/embed/${youtubeData}`}
+                            src={`https://www.youtube.com/embed/${otkVideoId}`}
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen
                         />
                     </div>
-                <a href={`https://www.youtube.com/watch?v=${youtubeData}`} className='m-auto text-xl font-bold mt-8 flex'>Watch on Youtube<FaLongArrowAltRight className='mt-[6px] ml-2'/></a>
+                <a href={`https://www.youtube.com/watch?v=${otkVideoId}`} className='m-auto text-xl font-bold mt-8 flex'>Watch on Youtube<FaLongArrowAltRight className='mt-[6px] ml-2'/></a>
             </div>
         )}
     </div>
