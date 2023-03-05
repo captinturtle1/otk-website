@@ -57,12 +57,12 @@ export default function Home() {
         .catch((err) => {
           console.log(err);
         })
-        fetch(`/api/getYoutubeData/`, {method: 'POST'})
+        fetch(`/api/getLatestOTKVideo/`, {method: 'POST'})
         .then((jsonResponse) => jsonResponse.json())
         .then((response) => {
             console.log(response.data.items[0].id.videoId);
             console.log(response);
-            setOtkVideoId(response.data.items[0].id.videoId);
+            setOtkVideoId(response.data.items[0].contentDetails.videoId);
         })
         .catch((err) => {
             setOtkVideoId('KgaAIpkhDH0');

@@ -2,7 +2,7 @@ export default function handler(req, res) {
     return new Promise((resolve, reject) => {
         if (req.method === 'POST') {
             try {
-                fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCgpRORu9JQFC_jtQeQ99hBA&maxResults=1&order=date&type=video&key=${process.env.youtube_api}`, {
+                fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=UUgpRORu9JQFC_jtQeQ99hBA&maxResults=1&key=${process.env.youtube_api}`, {
                     method: "GET",
                 })
                 .then((response) => response.json())
