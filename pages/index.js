@@ -6,18 +6,7 @@ import Hero from '../components/Hero';
 import Events from '../components/Events';
 import Videos from '../components/Videos';
 
-import esfandtvPfp from '../public/esfandtv.png';
-import asmongoldPfp from '../public/asmongold.png';
-import cyrPfp from '../public/cyr.png';
-import emiruPfp from '../public/emiru.png';
-import extraemilyPfp from '../public/extraemily.png';
-import tectonePfp from '../public/tectone.png';
-import sodapoppinPfp from '../public/sodapoppin.png';
-import nmplolPfp from '../public/nmplol.png';
-import mizkifPfp from '../public/mizkif.png';
-
-const streamersNames = ['EsfandTV', 'Asmongold', 'cyr', 'Emiru', 'ExtraEmily', 'Tectone', 'sodapoppin', 'Nmplol', 'Mizkif']
-const streamerPfps = [esfandtvPfp, asmongoldPfp, cyrPfp, emiruPfp, extraemilyPfp, tectonePfp, sodapoppinPfp, nmplolPfp, mizkifPfp]
+import { streamersNames, streamerPfps } from '../components/channelDetails'; 
 
 export default function Home() {
     const [streamerObjects, setStreamerObjects] = useState([]);
