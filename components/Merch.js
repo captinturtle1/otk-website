@@ -2,7 +2,7 @@ import { FaArrowRight } from 'react-icons/fa';
 
 export default function Hero() {
     return (
-    <div className='h-[900px] w-full flex relative'>
+    <div className='h-[900px] w-full flex relative' id='Merch'>
         <div className='mx-auto flex flex-col mt-24'>
             <div className='flex relative'>
                 <div className='bg-yellow-400 w-full h-full absolute translate-x-3 translate-y-3 -z-10 drop-shadow-xl'></div>

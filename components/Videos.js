@@ -22,7 +22,7 @@ export default function Hero({ recentMemberVideos }) {
       }, [swiperRef]);
 
     return (
-    <div className='h-[440px] flex flex-col px-10 overflow-hidden'>
+    <div className='h-[440px] flex flex-col px-10 overflow-hidden' id='Videos'>
         <div className='w-64 text-3xl font-bold relative ml-10'>
             <div className='bg-black translate-x-3 translate-y-3 w-full h-full absolute -z-30'/>
             <div className='bg-yellow-400 w-full h-full p-2'>Recent vidoes</div>
@@ -39,7 +39,7 @@ export default function Hero({ recentMemberVideos }) {
             spaceBetween={10}
             loop={true}
             navigation={true}
-            className="w-[1500px]"
+            className="w-[1480px]"
         >
             {recentMemberVideos.map((videoId, index) => 
             <SwiperSlide className=''>

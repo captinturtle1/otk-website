@@ -22,7 +22,7 @@ export default function Hero({streamerObjects, otkVideoId}) {
     },[streamerObjects]);
 
     return (
-    <div className='h-[900px] w-full flex relative'>
+    <div className='h-[900px] w-full flex relative' id='Hero'>
         {isAnyoneLive ? (
             <div className='mx-auto flex flex-col mt-24'>
                     <div className="flex gap-2 bg-zinc-400 bg-opacity-0 pb-5 rounded-xl transition-all">
