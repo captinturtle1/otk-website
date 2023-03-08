@@ -39,7 +39,7 @@ export default function Hero({ recentMemberVideos }) {
             spaceBetween={10}
             loop={true}
             navigation={true}
-            className="w-[1480px]"
+            className="w-[1480px] drop-shadow-lg"
         >
             {recentMemberVideos.map((videoId, index) => 
             <SwiperSlide className=''>
