@@ -5,6 +5,7 @@ import Sidebar from '../components/Sidebar';
 import Hero from '../components/Hero';
 import Events from '../components/Events';
 import Videos from '../components/Videos';
+import Streamers from '../components/Streamers';
 
 import { uploadPlaylists, streamerInfo } from '../components/channelDetails'; 
 
@@ -81,6 +82,7 @@ export default function Home() {
                     <Hero streamerObjects={streamerObjects} otkVideoId={otkVideoId}/>
                     <Events/>
                     <Videos recentMemberVideos={recentMemberVideos}/>
+                    <Streamers/>
                 </div>
             </div>
         </div>

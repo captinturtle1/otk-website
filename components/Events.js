@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 import { eventDetails } from './eventDetails';
@@ -32,12 +31,6 @@ function unixToLocalDate(unix) {
 }
 
 export default function Events() {
-    const [isAnyoneLive, setIsAnyoneLive] = useState(false);
-
-    useEffect(() => {
-
-    },[]);
-
     return (
     <div className='w-full py-12 flex'>
         <div className='w-full h-full p-20 grid grid-cols-3 gap-x-16 gap-y-24'>
