@@ -6,6 +6,7 @@ import Hero from '../components/Hero';
 import Events from '../components/Events';
 import Videos from '../components/Videos';
 import Streamers from '../components/Streamers';
+import Merch from '../components/Merch';
 
 import { uploadPlaylists, streamerInfo } from '../components/channelDetails'; 
 
@@ -83,6 +84,7 @@ export default function Home() {
                     <Events/>
                     <Videos recentMemberVideos={recentMemberVideos}/>
                     <Streamers/>
+                    <Merch/>
                 </div>
             </div>
         </div>
