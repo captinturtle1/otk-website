@@ -6,12 +6,13 @@ import Hero from '../components/Hero';
 import Events from '../components/Events';
 import Videos from '../components/Videos';
 
-import { streamersNames, streamerPfps } from '../components/channelDetails'; 
+import { streamersNames, streamerPfps, uploadPlaylists } from '../components/channelDetails'; 
 
 export default function Home() {
     const [streamerObjects, setStreamerObjects] = useState([]);
     const [sidebarVisible, setSidebarVisible] = useState(true);
     const [otkVideoId, setOtkVideoId] = useState('')
+    const [recentMemberVideos, setRecentMemberVideos] = useState([])
     
     useEffect(() => {
         let newObjects = [];
@@ -29,11 +30,9 @@ export default function Home() {
         fetch(`/api/getData/`, {method: 'POST', headers: {'Content-Type': 'application/json'},  body: JSON.stringify(streamersNames)})
         .then((jsonResponse) => jsonResponse.json())
         .then((response) => {
-            console.log(response.data.data);
             for (let i = 0; i < response.data.data.length; i++) {
                 for (let j = 0; j < streamersNames.length; j++) {
                     if (response.data.data[i].user_login.toLowerCase() == streamersNames[j].toLowerCase()) {
-                        console.log(response.data.data[i].user_login, "is", streamersNames[j]);
                         newObjects[j].viewers = response.data.data[i].viewer_count;
                         newObjects[j].live = true;
                         newObjects[j].title = response.data.data[i].title;
@@ -46,15 +45,25 @@ export default function Home() {
         .catch((err) => {
           console.log(err);
         })
+
         fetch(`/api/getLatestOTKVideo/`, {method: 'POST'})
         .then((jsonResponse) => jsonResponse.json())
         .then((response) => {
-            console.log(response.data.items[0].id.videoId);
-            console.log(response);
             setOtkVideoId(response.data.items[0].contentDetails.videoId);
         })
         .catch((err) => {
+            console.log(err)
             setOtkVideoId('KgaAIpkhDH0');
+        })
+
+        fetch(`/api/getLatestMemberVideos/`, {method: 'POST', headers: {'Content-Type': 'application/json'},  body: JSON.stringify(uploadPlaylists)})
+        .then((jsonResponse) => jsonResponse.json())
+        .then((response) => {
+            console.log(response);
+            setRecentMemberVideos([...response.videoIdArray]);
+        })
+        .catch((err) => {
+            console.log(err);
         })
     },[]);
 
@@ -66,7 +75,7 @@ export default function Home() {
                 <div className='w-screen'>
                     <Hero streamerObjects={streamerObjects} otkVideoId={otkVideoId}/>
                     <Events/>
-                    <Videos/>
+                    <Videos recentMemberVideos={recentMemberVideos}/>
                 </div>
             </div>
         </div>
