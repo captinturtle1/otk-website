@@ -6,7 +6,7 @@ import Hero from '../components/Hero';
 import Events from '../components/Events';
 import Videos from '../components/Videos';
 
-import { streamersNames, streamerPfps, uploadPlaylists } from '../components/channelDetails'; 
+import { uploadPlaylists, streamerInfo } from '../components/channelDetails'; 
 
 export default function Home() {
     const [streamerObjects, setStreamerObjects] = useState([]);
@@ -16,23 +16,28 @@ export default function Home() {
     
     useEffect(() => {
         let newObjects = [];
-        for (let i = 0; i < streamersNames.length; i++) {
+        for (let i = 0; i < streamerInfo.length; i++) {
             let newObject = {
-                name: streamersNames[i],
-                pfp: streamerPfps[i],
+                name: streamerInfo[i].name,
+                pfp: streamerInfo[i].image,
                 viewers: 0,
                 live: false,
                 title: ''
             }
             newObjects.push(newObject)
         }
+
+        let namesArray = []
+        for (let i = 0; i < streamerInfo.length; i++) {
+            namesArray.push(streamerInfo[i].name)
+        }
         
-        fetch(`/api/getData/`, {method: 'POST', headers: {'Content-Type': 'application/json'},  body: JSON.stringify(streamersNames)})
+        fetch(`/api/getData/`, {method: 'POST', headers: {'Content-Type': 'application/json'},  body: JSON.stringify(namesArray)})
         .then((jsonResponse) => jsonResponse.json())
         .then((response) => {
             for (let i = 0; i < response.data.data.length; i++) {
-                for (let j = 0; j < streamersNames.length; j++) {
-                    if (response.data.data[i].user_login.toLowerCase() == streamersNames[j].toLowerCase()) {
+                for (let j = 0; j < streamerInfo.length; j++) {
+                    if (response.data.data[i].user_login.toLowerCase() == streamerInfo[j].name.toLowerCase()) {
                         newObjects[j].viewers = response.data.data[i].viewer_count;
                         newObjects[j].live = true;
                         newObjects[j].title = response.data.data[i].title;
