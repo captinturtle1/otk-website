@@ -1,11 +1,9 @@
 export default function handler(req, res) {
-    console.log('getting latest vidoes');
     return new Promise((resolve, reject) => {
         if (req.method === 'POST') {
             try {
                 let videoIdArray = [];
                 for (let i = 0; i < req.body.length; i++) {
-                    console.log('loop', i);
                     fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=${req.body[i]}&maxResults=1&key=${process.env.youtube_api}`, {
                         method: "GET",
                     })
@@ -20,7 +18,6 @@ export default function handler(req, res) {
                 }
                 
             } catch(err) {
-                console.log(err);
                 res.status(500).json({ error: '500 Internal Server Error'});
                 reject();
             }
