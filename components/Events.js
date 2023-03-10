@@ -33,7 +33,7 @@ function unixToLocalDate(unix) {
 export default function Events() {
     return (
     <div className='w-full py-12 flex' id='Events'>
-        <div className='w-full h-full p-20 grid grid-cols-3 gap-x-16 gap-y-24'>
+        <div className='w-full h-full p-10 xl:p-20 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-16 gap-y-24'>
             {eventDetails.map((event, index) => 
                 <div className=''>
                     <div className='flex flex-col relative text-white font-bold text-3xl'>
