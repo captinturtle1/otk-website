@@ -22,9 +22,9 @@ export default function Hero({streamerObjects, otkVideoId}) {
     },[streamerObjects]);
 
     return (
-    <div className='h-[900px] w-full flex relative' id='Hero'>
+    <div className='h-[900px] max-w-[1152px] m-auto flex relative' id='Hero'>
         {isAnyoneLive ? (
-            <div className='mx-auto flex flex-col mt-24'>
+            <div className='m-auto flex h-full w-[95%] flex-col pt-32'>
                     <div className="flex gap-2 bg-zinc-400 bg-opacity-0 pb-5 rounded-xl transition-all">
                         <Image src={streamerObjects[0].pfp} className='rounded-full w-16 h-16 my-auto drop-shadow'/>
                         <div className='my-auto flex flex-col'>
@@ -36,20 +36,14 @@ export default function Hero({streamerObjects, otkVideoId}) {
                             </div>
                         </div>
                     </div>
-                    <div className='flex relative'>
+                    <div className='relative h-full'>
                         <div className='bg-yellow-400 w-full h-full absolute translate-x-3 translate-y-3 -z-10 drop-shadow-xl'/>
                         <iframe
                             src={`https://player.twitch.tv/?channel=${streamerObjects[0].name}&parent=localhost&muted=true`}
                             parent="localhost"
-                            height="594"
-                            width="1056"
-                            className=''
-                        />
-                        <iframe src={`https://www.twitch.tv/embed/${streamerObjects[0].name}/chat?parent=localhost&darkpopout`}
-                            parent="localhost"
-                            height="594"
-                            width="300"
-                            className=''
+                            height=""
+                            width=""
+                            className='w-full h-full'
                         />
                     </div>
                 <a href={`https://twitch.tv/${streamerObjects[0].name}`} className='m-auto text-xl font-bold mt-8 flex'>Watch on Twitch<FaLongArrowAltRight className='mt-[6px] ml-2'/></a>
