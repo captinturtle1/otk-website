@@ -78,8 +78,8 @@ export default function Home() {
         <div>
             <Navbar sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
             <div className='flex w-screen'>
-                <Sidebar streamerObjects={streamerObjects} sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
-                <div className='w-screen'>
+                <Sidebar className='' streamerObjects={streamerObjects} sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
+                <div className=''>
                     <Hero streamerObjects={streamerObjects} otkVideoId={otkVideoId}/>
                     <Events/>
                     <Videos recentMemberVideos={recentMemberVideos}/>
