@@ -22,7 +22,7 @@ export default function Hero({streamerObjects, otkVideoId}) {
     },[streamerObjects]);
 
     return (
-    <div className='h-[900px] max-w-[1152px] m-auto flex relative' id='Hero'>
+    <div className='h-[500px] md:h-[900px] max-w-[1152px] m-auto flex relative' id='Hero'>
         {isAnyoneLive ? (
             <div className='m-auto flex h-full w-[95%] flex-col pt-32'>
                     <div className="flex gap-2 bg-zinc-400 bg-opacity-0 pb-5 rounded-xl transition-all">
@@ -49,27 +49,26 @@ export default function Hero({streamerObjects, otkVideoId}) {
                 <a href={`https://twitch.tv/${streamerObjects[0].name}`} className='m-auto text-xl font-bold mt-8 flex'>Watch on Twitch<FaLongArrowAltRight className='mt-[6px] ml-2'/></a>
             </div>
         ):(
-            <div className='mx-auto flex flex-col mt-24'>
-                    <div className="flex gap-2 w-64 bg-zinc-400 bg-opacity-0 pb-5 rounded-xl transition-all">
+
+            <div className='m-auto flex h-full w-[95%] flex-col pt-32 p-8'>
+            <div className="flex gap-2 w-64 bg-zinc-400 bg-opacity-0 pb-5 rounded-xl transition-all">
                         <Image height={50} width={50} src={ytLogo} className='rounded-full'/>
                         <div className='my-auto flex flex-col'>
                             <div className='font-semibold text-lg'>Latest Video</div>
                         </div>
                     </div>
-                    <div className='flex relative'>
-                        <div className='bg-yellow-400 w-full h-full absolute translate-x-3 translate-y-3 -z-10 drop-shadow-xl'/>
-                        <iframe
-                            width="1056"
-                            height="594"
-                            src={`https://www.youtube.com/embed/${otkVideoId}`}
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen
-                        />
-                    </div>
-                <a href={`https://www.youtube.com/watch?v=${otkVideoId}`} className='m-auto text-xl font-bold mt-8 flex'>Watch on Youtube<FaLongArrowAltRight className='mt-[6px] ml-2'/></a>
+            <div className='relative h-full'>
+                <div className='bg-yellow-400 w-full h-full absolute translate-x-3 translate-y-3 -z-10 drop-shadow-xl'/>
+                <iframe
+                    src={`https://www.youtube.com/embed/${otkVideoId}`}
+                    parent="localhost"
+                    height=""
+                    width=""
+                    className='w-full h-full'
+                />
             </div>
+        <a href={`https://www.youtube.com/watch?v=${otkVideoId}`} className='m-auto text-xl font-bold mt-8 flex'>Watch on Youtube<FaLongArrowAltRight className='mt-[6px] ml-2'/></a>
+    </div>
         )}
     </div>
   )
