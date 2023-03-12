@@ -13,7 +13,7 @@ export default function Events() {
                 <div className='bg-black w-full h-full -z-10 absolute rounded-2xl'/>
                 <div className='flex flex-col bg-yellow-400 text-white font-bold text-3xl rounded-xl p-5 drop-shadow-xl hover:-translate-x-3 hover:-translate-y-3 transition-all'>
                     <Image src={streamer.image2} className='rounded-xl drop-shadow-xl'/>
-                    <div className='m-auto mt-5 text-[80%]'>{streamer.name}</div>
+                    <div className='m-auto mt-5 text-xl lg:text-3xl'>{streamer.name}</div>
                     <div className='flex m-auto mt-5 gap-5 text-[90%]'>
                         <a href={streamer.youtube} className=''><FaYoutube/></a>
                         <a href={streamer.twitch} className=''><FaTwitch/></a>
