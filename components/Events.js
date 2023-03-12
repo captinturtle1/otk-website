@@ -36,7 +36,7 @@ export default function Events() {
         <div className='w-full h-full p-10 xl:p-20 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-16 gap-y-24'>
             {eventDetails.map((event, index) => 
                 <div className=''>
-                    <div className='flex flex-col relative text-white font-bold text-3xl'>
+                    <div className='flex flex-col relative text-white font-bold text-2xl lg:text-3xl'>
                         <div className='bg-yellow-400 h-full w-[90%] absolute -z-10 mx-auto left-0 right-0 rounded-3xl'/>
                         <Image src={event.logo} className='w-64 absolute mx-auto left-0 right-0 -translate-y-24 drop-shadow-lg z-10'/>
                         <Image src={event.image} className='rounded-xl mt-20 mx-auto drop-shadow-xl'/>
