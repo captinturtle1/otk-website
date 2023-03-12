@@ -1,12 +1,12 @@
 import { FaArrowRight } from 'react-icons/fa';
 
-export default function Hero() {
+export default function Merch() {
     return (
-    <div className='w-[95%] flex m-auto relative xl:p-16' id='Merch'>
-        <div className='mx-auto flex flex-col mt-24'>
+    <div className='flex m-auto relative p-8 xl:p-16' id='Merch'>
+        <div className='mx-auto flex flex-col'>
             <div className='flex relative'>
                 <div className='bg-yellow-400 w-full h-full absolute translate-x-3 translate-y-3 -z-10 drop-shadow-xl'></div>
-                <video src='/merchVid.mp4' autoPlay muted loop className='bg-black'/>
+                <video src='/merchVid.mp4' autoPlay muted loop className='bg-black h-[500px] xl:h-[750px] object-cover'/>
                 <div className='absolute h-full w-full flex flex-col text-white gap-5'>
                     <div className='mx-auto mt-[30%] text-xl lg:text-4xl xl:text-6xl font-bold'>The Kings of Content</div>
                     <div className='mx-auto text-xl hidden lg:block'>Super-duper Entertainment®</div>
