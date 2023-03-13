@@ -16,6 +16,19 @@ export default function Home() {
     const [sidebarVisible, setSidebarVisible] = useState(true);
     const [otkVideoId, setOtkVideoId] = useState('')
     const [recentMemberVideos, setRecentMemberVideos] = useState([])
+
+    const [mobileChannelsVisible, setMobileChannelsVisible] = useState(false);
+    const [mobileNavVisible, setMobileNavVisible] = useState(false);
+
+    const toggleMobileChannels = () => {
+        if (mobileNavVisible) setMobileNavVisible(false);
+        setMobileChannelsVisible(!mobileChannelsVisible)
+    }
+
+    const toggleMobileNav = () => {
+        if (mobileChannelsVisible) setMobileChannelsVisible(false);
+        setMobileNavVisible(!mobileNavVisible)
+    }
     
     useEffect(() => {
         let newObjects = [];
@@ -77,7 +90,7 @@ export default function Home() {
 
     return (
         <div>
-            <Navbar sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
+            <Navbar sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} mobileChannelsVisible={mobileChannelsVisible} toggleMobileChannels={toggleMobileChannels} mobileNavVisible={mobileNavVisible} toggleMobileNav={toggleMobileNav}/>
             <div className='flex w-screen'>
                 <Sidebar className='' streamerObjects={streamerObjects} sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
                 <div className=''>
