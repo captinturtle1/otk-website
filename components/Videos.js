@@ -44,7 +44,7 @@ export default function Hero({ recentMemberVideos }) {
                                     width=""
                                     height=""
                                     src={`https://www.youtube.com/embed/${item}`}
-                                    parent='https://main.d30s79gslbhyrg.amplifyapp.com/'
+                                    parent='main.d30s79gslbhyrg.amplifyapp.com'
                                     title="YouTube video player"
                                     frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
