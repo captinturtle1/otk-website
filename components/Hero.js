@@ -24,7 +24,7 @@ export default function Hero({streamerObjects, otkVideoId}) {
     return (
     <div className='h-[500px] md:h-[900px] max-w-[1152px] m-auto flex relative' id='Hero'>
         {isAnyoneLive ? (
-            <div className='m-auto flex h-full w-[95%] flex-col pt-32 mx-10'>
+            <div className='m-auto flex h-full w-[299px] md:w-[95%] flex-col pt-32'>
                     <div className="flex gap-2 bg-zinc-400 bg-opacity-0 pb-5 rounded-xl transition-all">
                         <Image src={streamerObjects[0].pfp} className='rounded-full w-16 h-16 my-auto drop-shadow'/>
                         <div className='my-auto flex flex-col'>
