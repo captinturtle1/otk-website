@@ -37,14 +37,14 @@ export default function Events() {
             {eventDetails.map((event, index) => 
                 <div className=''>
                     <div className='flex flex-col relative text-white font-bold text-2xl lg:text-3xl'>
-                        <div className='bg-yellow-400 h-full w-[90%] absolute -z-10 mx-auto left-0 right-0 rounded-3xl'/>
-                        <Image src={event.logo} className='w-64 absolute mx-auto left-0 right-0 -translate-y-24 drop-shadow-lg z-10'/>
-                        <Image src={event.image} className='rounded-xl mt-20 mx-auto drop-shadow-xl'/>
-                        <div className='ml-12 my-10 flex gap-2'>
+                        <div className='bg-yellow-400 h-full w-[85%] md:w-[90%] absolute -z-10 mx-auto left-0 right-0 rounded-3xl'/>
+                        <Image src={event.logo} className='w-48 md:w-64 absolute mx-auto left-0 right-0 -translate-y-24 drop-shadow-lg z-10'/>
+                        <Image src={event.image} className='w-80 md:w-full rounded-xl mt-8 md:mt-20 mx-auto drop-shadow-xl'/>
+                        <div className='ml-12 my-5 md:my-10 flex gap-2'>
                             <FaTv className='my-auto'/>
                             <div>{event.channel}</div>
                         </div>
-                        <div className='ml-12 mb-10 flex gap-2'>
+                        <div className='ml-12 mb-5 md:mb-10 flex gap-2'>
                             <FaRegClock className='my-auto'/>
                             <div suppressHydrationWarning>{unixToLocalDate(event.date)}</div>
                         </div>
