@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 import { useState } from 'react';
 import { FaStepForward, FaBars, FaTv } from 'react-icons/fa';
 
-export default function Navbar({sidebarVisible, setSidebarVisible, mobileChannelsVisible, toggleMobileChannels, mobileNavVisible, toggleMobileNav}) {
+export default function Navbar({sidebarVisible, toggleSidebar, mobileNavVisible, toggleMobileNav}) {
     
     
 
@@ -15,9 +15,8 @@ export default function Navbar({sidebarVisible, setSidebarVisible, mobileChannel
 
     return (
         <div className='bg-black h-16 w-screen select-none z-50 fixed'>
-            <FaStepForward onClick={sidebarVisible ? () => setSidebarVisible(false) : () => setSidebarVisible(true)} className={sidebarVisible ? 'text-white fixed top-6 left-5 rotate-180 cursor-pointer transition-all hidden md:block' : 'text-white fixed top-6 left-5 cursor-pointer transition-all hidden md:block'}/>
-            <FaBars onClick={toggleMobileNav} className={mobileNavVisible ? 'text-green-400 fixed top-6 left-5 cursor-pointer transition-all' : 'text-white fixed top-6 left-5 cursor-pointer transition-all md:hidden'}/>
-            <FaTv onClick={toggleMobileChannels} className={mobileChannelsVisible ? 'text-green-400 fixed top-6 right-5 cursor-pointer transition-all' : 'text-white fixed top-6 right-5 cursor-pointer transition-all md:hidden'}/>
+            <FaStepForward onClick={toggleSidebar} className={sidebarVisible ? 'text-white fixed top-6 left-5 rotate-180 cursor-pointer transition-all' : 'text-white fixed top-6 left-5 cursor-pointer transition-all'}/>
+            <FaBars onClick={toggleMobileNav} className={mobileNavVisible ? 'text-green-400 fixed top-6 right-5 cursor-pointer transition-all' : 'text-white fixed top-6 right-5 cursor-pointer transition-all md:hidden'}/>
             <div className='mx-32 flex text-lg font-semibold'>
                 <Link to='Events' spy={true} smooth={true} offset={0} duration={500} className='m-auto cursor-pointer text-white hover:text-gray-200 transition-all hidden md:block'>Events</Link>
                 <Link to='Videos' spy={true} smooth={true} offset={-200} duration={500} className='m-auto cursor-pointer text-white hover:text-gray-200 transition-all hidden md:block'>Videos</Link>

@@ -13,24 +13,28 @@ import { uploadPlaylists, streamerInfo } from '../components/channelDetails';
 
 export default function Home() {
     const [streamerObjects, setStreamerObjects] = useState([]);
-    const [sidebarVisible, setSidebarVisible] = useState(true);
     const [otkVideoId, setOtkVideoId] = useState('')
     const [recentMemberVideos, setRecentMemberVideos] = useState([])
 
-    const [mobileChannelsVisible, setMobileChannelsVisible] = useState(false);
+    const [sidebarVisible, setSidebarVisible] = useState(false);
     const [mobileNavVisible, setMobileNavVisible] = useState(false);
 
-    const toggleMobileChannels = () => {
+    const toggleSidebar = () => {
         if (mobileNavVisible) setMobileNavVisible(false);
-        setMobileChannelsVisible(!mobileChannelsVisible)
+        setSidebarVisible(!sidebarVisible)
     }
 
     const toggleMobileNav = () => {
-        if (mobileChannelsVisible) setMobileChannelsVisible(false);
+        if (sidebarVisible) setSidebarVisible(false);
         setMobileNavVisible(!mobileNavVisible)
     }
     
     useEffect(() => {
+        console.log(window.innerWidth);
+        if (window.innerWidth >= 768) {
+            setSidebarVisible(true);
+        }
+
         let newObjects = [];
         for (let i = 0; i < streamerInfo.length; i++) {
             let newObject = {
@@ -90,7 +94,7 @@ export default function Home() {
 
     return (
         <div>
-            <Navbar sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} mobileChannelsVisible={mobileChannelsVisible} toggleMobileChannels={toggleMobileChannels} mobileNavVisible={mobileNavVisible} toggleMobileNav={toggleMobileNav}/>
+            <Navbar sidebarVisible={sidebarVisible} toggleSidebar={toggleSidebar} mobileNavVisible={mobileNavVisible} toggleMobileNav={toggleMobileNav}/>
             <div className='flex w-screen'>
                 <Sidebar className='' streamerObjects={streamerObjects} sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
                 <div className=''>
