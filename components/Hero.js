@@ -40,9 +40,6 @@ export default function Hero({streamerObjects, otkVideoId}) {
                         <div className='bg-yellow-400 w-full h-full absolute translate-x-3 translate-y-3 -z-10 drop-shadow-xl'/>
                         <iframe
                             src={`https://player.twitch.tv/?channel=${streamerObjects[0].name}&parent=localhost&muted=true`}
-                            parent="main.d30s79gslbhyrg.amplifyapp.com"
-                            height=""
-                            width=""
                             className='w-full h-full'
                         />
                     </div>
@@ -61,9 +58,6 @@ export default function Hero({streamerObjects, otkVideoId}) {
                     <div className='bg-yellow-400 w-full h-full absolute translate-x-3 translate-y-3 -z-10 drop-shadow-xl'/>
                     <iframe
                         src={`https://www.youtube.com/embed/${otkVideoId}`}
-                        parent="main.d30s79gslbhyrg.amplifyapp.com"
-                        height=""
-                        width=""
                         className='w-full h-full'
                     />
                 </div>
