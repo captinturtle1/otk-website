@@ -39,7 +39,7 @@ export default function Hero({streamerObjects, otkVideoId}) {
                     <div className='relative h-full'>
                         <div className='bg-yellow-400 w-full h-full absolute translate-x-3 translate-y-3 -z-10 drop-shadow-xl'/>
                         <iframe
-                            src={`https://player.twitch.tv/?channel=${streamerObjects[0].name}&parent=localhost&muted=true`}
+                            src={`https://player.twitch.tv/?channel=${streamerObjects[0].name}&parent=main.d30s79gslbhyrg.amplifyapp.com&muted=true`}
                             className='w-full h-full'
                         />
                     </div>
