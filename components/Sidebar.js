@@ -10,13 +10,12 @@ function numberWithCommas(numberToFormat) {
 export default function Sidebar({streamerObjects, sidebarVisible}) {
     const [expanded, setExpanded] = useState(false);
 
-    console.log(streamerObjects);
     const streamerList = streamerObjects.map((streamer, index) =>
-        <div className='select-none'>
+        <div key={streamer.name} className='select-none'>
             {!expanded ? (
                 <>
                     {index < 4 ? (
-                        <div key={streamer.name} >
+                        <div>
                             <a href={`https://twitch.tv/${streamer.name}`} className="flex gap-2 w-40 bg-zinc-400 bg-opacity-0 hover:bg-opacity-20 p-1 rounded-xl transition-all">
                                 <Image height={50} width={50} src={streamer.pfp} className='rounded-full'/>
                                 <div className='my-auto flex flex-col'>
@@ -59,7 +58,7 @@ export default function Sidebar({streamerObjects, sidebarVisible}) {
 
     return (
         <div className={sidebarVisible ? 'w-64 flex-shrink-0 z-40 transition-all absolute md:static' : 'w-0 flex-shrink-0 z-40 transition-all absolute md:static'}>
-            <div className={sidebarVisible ? 'bg-zinc-200 h-screen flex flex-col pt-24 w-64 fixed left-0 transition-all p-6': 'bg-zinc-200 h-screen flex flex-col pt-24 w-64 fixed left-[-100%] transition-all p-6'}>
+            <div className={sidebarVisible ? 'bg-zinc-200 h-screen flex flex-col pt-24 w-64 fixed left-0 transition-all p-6': 'bg-zinc-200 h-screen flex flex-col pt-24 w-64 fixed -left-64 transition-all p-6'}>
                 <div className='overflow-x-scroll flex flex-col gap-2'>
                     {streamerList}
                 </div>
