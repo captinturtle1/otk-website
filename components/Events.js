@@ -33,20 +33,24 @@ function unixToLocalDate(unix) {
 export default function Events() {
     return (
     <div className='w-full py-12 flex' id='Events'>
-        <div className='w-full h-full p-10 xl:p-20 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-16 gap-y-24'>
+        <div className='w-full h-full p-10 grid grid-cols-1 lg:grid-cols-2 min-[1600px]:grid-cols-3 gap-y-24'>
             {eventDetails.map((event, index) => 
-                <div className=''>
-                    <div className='flex flex-col relative text-white font-bold text-2xl lg:text-3xl'>
-                        <div className='bg-yellow-400 h-full w-[85%] md:w-[90%] absolute -z-10 mx-auto left-0 right-0 rounded-3xl'/>
-                        <Image src={event.logo} className='w-48 md:w-64 absolute mx-auto left-0 right-0 -translate-y-24 drop-shadow-lg z-10'/>
-                        <Image src={event.image} className='w-80 md:w-full rounded-xl mt-8 md:mt-20 mx-auto drop-shadow-xl'/>
-                        <div className='ml-12 my-5 md:my-10 flex gap-2'>
-                            <FaTv className='my-auto'/>
-                            <div>{event.channel}</div>
-                        </div>
-                        <div className='ml-12 mb-5 md:mb-10 flex gap-2'>
-                            <FaRegClock className='my-auto'/>
-                            <div suppressHydrationWarning>{unixToLocalDate(event.date)}</div>
+                <div key={event.name} className=''>
+                    <div className='flex flex-col relative text-white font-bold text-xl min-[1600px]:text-2xl'>
+                        <div className='bg-yellow-400 flex flex-col h-[400px] w-[300px] min-[1600px]:h-[450px] min-[1600px]:w-[350px] mx-auto rounded-3xl'>
+                            <Image src={event.logo} className='w-[200px] min-[1600px]:w-[220px] absolute mx-auto left-0 right-0 -translate-y-24 z-10'/>
+                            <Image src={event.image} className='w-[344px] min-[1600px]:w-[400px] absolute rounded-xl left-0 right-0 mx-auto mt-8'/>
+                            <div className='grow'/>
+                            <div className='mb-10 ml-5 gap-3 flex flex-col'>
+                                <div className='flex gap-2'>
+                                    <FaTv className='my-auto'/>
+                                    <div>{event.channel}</div>
+                                </div>
+                                <div className='flex gap-2'>
+                                    <FaRegClock className='my-auto'/>
+                                    <div suppressHydrationWarning>{unixToLocalDate(event.date)}</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
