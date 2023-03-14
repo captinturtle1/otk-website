@@ -30,7 +30,6 @@ export default function Home() {
     }
     
     useEffect(() => {
-        console.log(window.innerWidth);
         if (window.innerWidth >= 768) {
             setSidebarVisible(true);
         }
@@ -52,7 +51,7 @@ export default function Home() {
             namesArray.push(streamerInfo[i].name)
         }
         
-        fetch(`/api/getData/`, {method: 'POST', headers: {'Content-Type': 'application/json'},  body: JSON.stringify(namesArray)})
+        fetch(`/api/getTwitchData/`, {method: 'POST', headers: {'Content-Type': 'application/json'},  body: JSON.stringify(namesArray)})
         .then((jsonResponse) => jsonResponse.json())
         .then((response) => {
             for (let i = 0; i < response.data.data.length; i++) {

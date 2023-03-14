@@ -9,12 +9,15 @@ export default function handler(req, res) {
                     })
                     .then((response) => response.json())
                     .then((data) => {
+                        console.log('loop: ', i, data);
                         videoIdArray.push(data.items[0].contentDetails.videoId);
-                        if (i == req.body.length - 1) {
+                        if (videoIdArray.length == req.body.length) {
+                            console.log(videoIdArray);
                             res.status(200).json({ videoIdArray });
                             resolve();
                         }
                     })
+                    .catch(console.log)
                 }
                 
             } catch(err) {

@@ -18,7 +18,17 @@ import sodapoppinPfp2 from '../public/sodapoppin2.png';
 import nmplolPfp2 from '../public/nmplol2.png';
 import mizkifPfp2 from '../public/mizkif2.png';
 
-export const uploadPlaylists = ["UUkAsdQZolgJdKmZ3T3zn-dA", "UUhl76B7zqfMcNzfMi9vJruw", "UUQeRaTukNYft1_6AZPACnog", "UUN4PUx0xlsaGTNPxgQYPjKA", "UUyclX6ZQCOXunEg4Z7EA8fw", "UUhX76aZbAkJBdQQ2iAm-GQg", "UUPnSoX7NkOBcOX0Gfw_yjAw"];
+export const uploadPlaylists = [
+    "UUkAsdQZolgJdKmZ3T3zn-dA",
+    "UUhl76B7zqfMcNzfMi9vJruw",
+    "UUQeRaTukNYft1_6AZPACnog",
+    "UUN4PUx0xlsaGTNPxgQYPjKA",
+    "UUyclX6ZQCOXunEg4Z7EA8fw",
+    "UUhX76aZbAkJBdQQ2iAm-GQg",
+    "UUPnSoX7NkOBcOX0Gfw_yjAw",
+    "UUtTeno9kdP8OxCxylq5Q7GA",
+    "UUUmDAKhSZJY6qamQb9NGuJg"
+];
 
 export const streamerInfo = [
     {
