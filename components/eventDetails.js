@@ -1,30 +1,36 @@
-import emoteonlyLogo from '../public/emoteonlyLogo.png';
+
 import steakandeggsLogo from '../public/steakandeggsLogo.png';
-import gamedayLogo from '../public/gamedayLogo.png';
-import emoteonly from '../public/emoteonly.png';
 import steakandeggs from '../public/steakandeggs.png';
+
+import emoteonlyLogo from '../public/emoteonlyLogo.png';
+import emoteonly from '../public/emoteonly.png';
+
+import gamedayLogo from '../public/gamedayLogo.png';
 import gameday from '../public/gameday.png';
+
+import trashtalkLogo from '../public/trashtalkLogo.png';
+import trashtalk from '../public/trashtalk.png';
 
 export const eventDetails = [
     {
-        name: 'Emote Only',
-        date: 1677794400,
-        channel: 'Tectone',
-        image: emoteonly,
-        logo: emoteonlyLogo
-    },
-    {
         name: 'Steak & Eggs',
-        date: 1677862800,
+        date: 1678888800,
         channel: 'Youtube',
         image: steakandeggs,
         logo: steakandeggsLogo
     },
     {
         name: 'Gameday',
-        date: 1677873600,
+        date: 1678906800,
         channel: 'Nmplol',
         image: gameday,
         logo: gamedayLogo
+    },
+    {
+        name: 'Trash talk',
+        date: 1679256000,
+        channel: 'Sodapoppin',
+        image: trashtalk,
+        logo: trashtalkLogo
     },
 ]
