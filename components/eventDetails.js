@@ -14,14 +14,14 @@ import trashtalk from '../public/trashtalk.png';
 export const eventDetails = [
     {
         name: 'Steak & Eggs',
-        date: 1678888800,
+        date: 1681488000,
         channel: 'Youtube',
         image: steakandeggs,
         logo: steakandeggsLogo
     },
     {
         name: 'Gameday',
-        date: 1678906800,
+        date: 1680289200,
         channel: 'Nmplol',
         image: gameday,
         logo: gamedayLogo
