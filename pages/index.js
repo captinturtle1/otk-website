@@ -94,7 +94,7 @@ export default function Home() {
     return (
         <div>
             <Navbar sidebarVisible={sidebarVisible} toggleSidebar={toggleSidebar} mobileNavVisible={mobileNavVisible} toggleMobileNav={toggleMobileNav}/>
-            <div className='flex w-screen'>
+            <div className='flex'>
                 <Sidebar className='' streamerObjects={streamerObjects} sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible}/>
                 <div className=''>
                     <Hero streamerObjects={streamerObjects} otkVideoId={otkVideoId}/>

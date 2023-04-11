@@ -59,7 +59,7 @@ export default function Sidebar({streamerObjects, sidebarVisible}) {
     return (
         <div className={sidebarVisible ? 'w-64 flex-shrink-0 z-40 transition-all absolute md:static' : 'w-0 flex-shrink-0 z-40 transition-all absolute md:static'}>
             <div className={sidebarVisible ? 'bg-zinc-200 h-screen flex flex-col pt-24 w-64 fixed left-0 transition-all p-6': 'bg-zinc-200 h-screen flex flex-col pt-24 w-64 fixed -left-64 transition-all p-6'}>
-                <div className='overflow-x-scroll flex flex-col gap-2'>
+                <div className='flex flex-col gap-2'>
                     {streamerList}
                 </div>
                 {!expanded ? (
