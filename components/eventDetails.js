@@ -11,26 +11,29 @@ import gameday from '../public/gameday.png';
 import trashtalkLogo from '../public/trashtalkLogo.png';
 import trashtalk from '../public/trashtalk.png';
 
+import parasocialLogo from '../public/parasocialLogo.png';
+import parasocial from '../public/parasocial.png';
+
 export const eventDetails = [
     {
-        name: 'Steak & Eggs',
-        date: 1681488000,
-        channel: 'Youtube',
-        image: steakandeggs,
-        logo: steakandeggsLogo
-    },
-    {
-        name: 'Gameday',
-        date: 1680289200,
-        channel: 'Nmplol',
-        image: gameday,
-        logo: gamedayLogo
+        name: 'Parasocial',
+        date: 1681927200,
+        channel: 'Mizkif',
+        image: parasocial,
+        logo: parasocialLogo
     },
     {
         name: 'Trash talk',
-        date: 1679256000,
+        date: 1682280000,
         channel: 'Sodapoppin',
         image: trashtalk,
         logo: trashtalkLogo
+    },
+    {
+        name: 'Steak & Eggs',
+        date: 1682697600,
+        channel: 'Youtube',
+        image: steakandeggs,
+        logo: steakandeggsLogo
     },
 ]
