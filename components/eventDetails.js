@@ -14,24 +14,27 @@ import trashtalk from '../public/trashtalk.png';
 import parasocialLogo from '../public/parasocialLogo.png';
 import parasocial from '../public/parasocial.png';
 
+import elevatedLogo from '../public/elevatedLogo.png';
+import elevated from '../public/elevated.png';
+
 export const eventDetails = [
     {
         name: 'Parasocial',
-        date: 1681927200,
+        date: 1683743400,
         channel: 'Mizkif',
         image: parasocial,
         logo: parasocialLogo
     },
     {
-        name: 'Trash talk',
-        date: 1682280000,
-        channel: 'Sodapoppin',
-        image: trashtalk,
-        logo: trashtalkLogo
+        name: 'Elevated',
+        date: 1683838800,
+        channel: 'Zackrawr',
+        image: elevated,
+        logo: elevatedLogo
     },
     {
         name: 'Steak & Eggs',
-        date: 1682697600,
+        date: 1683907200,
         channel: 'Youtube',
         image: steakandeggs,
         logo: steakandeggsLogo

@@ -48,7 +48,7 @@ export default function Events() {
                                 </div>
                                 <div className='flex gap-2'>
                                     <FaRegClock className='my-auto'/>
-                                    <div suppressHydrationWarning>{unixToLocalDate(event.date)}</div>
+                                    <div suppressHydrationWarning>{unixToLocalDate(event.date)} <span className='text-sm'>(local)</span></div>
                                 </div>
                             </div>
                         </div>
