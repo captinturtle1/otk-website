@@ -6,13 +6,6 @@ import { useState } from 'react';
 import { FaStepForward, FaBars, FaTv } from 'react-icons/fa';
 
 export default function Navbar({sidebarVisible, toggleSidebar, mobileNavVisible, toggleMobileNav}) {
-    
-    
-
-    
-
-    
-
     return (
         <div className='bg-black h-16 w-screen select-none z-50 fixed'>
             <FaStepForward onClick={toggleSidebar} className={sidebarVisible ? 'text-white fixed top-6 left-5 rotate-180 cursor-pointer transition-all' : 'text-white fixed top-6 left-5 cursor-pointer transition-all'}/>
