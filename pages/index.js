@@ -67,7 +67,7 @@ export default function Home() {
             setStreamerObjects([...newObjects]);
         })
         .catch((err) => {
-          console.log(err);
+
         })
 
         fetch(`/api/getLatestOTKVideo/`, {method: 'POST'})
@@ -76,18 +76,17 @@ export default function Home() {
             setOtkVideoId(response.data.items[0].contentDetails.videoId);
         })
         .catch((err) => {
-            console.log(err)
+
             setOtkVideoId('KgaAIpkhDH0');
         })
 
         fetch(`/api/getLatestMemberVideos/`, {method: 'POST', headers: {'Content-Type': 'application/json'},  body: JSON.stringify(uploadPlaylists)})
         .then((jsonResponse) => jsonResponse.json())
         .then((response) => {
-            console.log(response);
             setRecentMemberVideos([...response.videoIdArray]);
         })
         .catch((err) => {
-            console.log(err);
+
         })
     },[]);
 
