@@ -4,7 +4,7 @@ export default function handler(req, res) {
             try {
                 let videoIdArray = [];
                 for (let i = 0; i < req.body.length; i++) {
-                    fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=${req.body[i]}&maxResults=1&key=${process.env.youtube_api}`, {
+                    fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=${req.body[i]}&maxResults=1&key=${process.env.YOUTUBE_SECRET}`, {
                         method: "GET",
                     })
                     .then((response) => response.json())
