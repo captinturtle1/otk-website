@@ -1,5 +1,7 @@
 let accessToken = '';
 
+
+// get inital access_token
 fetch('https://id.twitch.tv/oauth2/token', {
     method: 'POST',
     headers:{
