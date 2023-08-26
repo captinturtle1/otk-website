@@ -17,26 +17,37 @@ import parasocial from '../public/parasocial.png';
 import elevatedLogo from '../public/elevatedLogo.png';
 import elevated from '../public/elevated.png';
 
+import wheelofchaosLogo from '../public/wheelofchaosLogo.png';
+import wheelofchaos from '../public/wheelofchaos.png';
+
+import schooledLogo from '../public/schooledLogo.png';
+import schooled from '../public/schooled.png';
+
 export const eventDetails = [
     {
-        name: 'Parasocial',
-        date: 1683743400,
-        channel: 'Mizkif',
-        image: parasocial,
-        logo: parasocialLogo
+        name: 'Wheel of Chaos',
+        date: 1693515600,
+        channel: 'ExtraEmily',
+        image: wheelofchaos,
+        logo: wheelofchaosLogo,
+        link: 'https://twitch.tv/extraemily'
     },
-    {
-        name: 'Elevated',
-        date: 1683838800,
-        channel: 'Zackrawr',
-        image: elevated,
-        logo: elevatedLogo
-    },
+
     {
         name: 'Steak & Eggs',
-        date: 1683907200,
+        date: 1693584000,
         channel: 'Youtube',
         image: steakandeggs,
-        logo: steakandeggsLogo
+        logo: steakandeggsLogo,
+        link: 'https://www.youtube.com/@steakandeggspod',
+    },
+
+    {
+        name: 'Twitchcon Schooled',
+        date: 1697911200,
+        channel: 'Mizkif',
+        image: schooled,
+        logo: schooledLogo,
+        link: 'https://twitch.tv/mizkif',
     },
 ]

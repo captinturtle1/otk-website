@@ -32,7 +32,7 @@ function unixToLocalDate(unix) {
 
 export default function Events() {
     return (
-    <div className='w-full py-12 flex' id='Events'>
+    <div className='w-full py-12 flex flex-col' id='Events'>
         <div className='w-full h-full p-10 grid grid-cols-1 lg:grid-cols-2 min-[1600px]:grid-cols-3 gap-y-24'>
             {eventDetails.map((event, index) => 
                 <div key={event.name} className=''>
@@ -48,7 +48,7 @@ export default function Events() {
                                 </div>
                                 <div className='flex gap-2'>
                                     <FaRegClock className='my-auto'/>
-                                    <div suppressHydrationWarning>{unixToLocalDate(event.date)} <span className='text-sm'>(local)</span></div>
+                                    <div suppressHydrationWarning>{unixToLocalDate(event.date)}</div>
                                 </div>
                             </div>
                         </div>
@@ -56,6 +56,7 @@ export default function Events() {
                 </div>
             )}
         </div>
+        <h2 className='m-auto text-sm font-bold'>Times displayed in your local time</h2>
     </div>
   )
 }  
