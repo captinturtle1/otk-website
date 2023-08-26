@@ -37,7 +37,7 @@ export default function Events() {
             {eventDetails.map((event, index) => 
                 <div key={event.name} className=''>
                     <div className='flex flex-col relative text-white font-bold text-xl min-[1600px]:text-2xl'>
-                        <div className='bg-yellow-400 flex flex-col h-[400px] w-[300px] min-[1600px]:h-[450px] min-[1600px]:w-[350px] mx-auto rounded'>
+                        <a href={event.link} target='_blank' className='bg-yellow-400 hover:bg-opacity-70 transition-all flex flex-col h-[400px] w-[300px] min-[1600px]:h-[450px] min-[1600px]:w-[350px] mx-auto rounded'>
                             <Image src={event.logo} className='w-[200px] min-[1600px]:w-[220px] absolute mx-auto left-0 right-0 -translate-y-24 z-10 drop-shadow-lg'/>
                             <Image src={event.image} className='w-[344px] min-[1600px]:w-[400px] absolute rounded left-0 right-0 mx-auto mt-8'/>
                             <div className='grow'/>
@@ -51,7 +51,7 @@ export default function Events() {
                                     <h1 className='drop-shadow' suppressHydrationWarning>{unixToLocalDate(event.date)}</h1>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             )}
