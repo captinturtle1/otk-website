@@ -43,7 +43,7 @@ export default function Hero({streamerObjects, otkVideoId}) {
                             className='w-full h-full'
                         />
                     </div>
-                <a href={`https://twitch.tv/${streamerObjects[0].name}`} className='m-auto text-xl font-bold mt-8 flex'>Watch on Twitch<FaLongArrowAltRight className='mt-[6px] ml-2'/></a>
+                <a href={`https://twitch.tv/${streamerObjects[0].name}`} target='_blank' className='m-auto text-xl font-bold mt-8 flex'>Watch on Twitch<FaLongArrowAltRight className='mt-[6px] ml-2'/></a>
             </div>
         ):(
 

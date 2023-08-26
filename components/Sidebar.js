@@ -16,7 +16,7 @@ export default function Sidebar({streamerObjects, sidebarVisible}) {
                 <>
                     {index < 4 ? (
                         <div>
-                            <a href={`https://twitch.tv/${streamer.name}`} className="flex gap-2 w-40 bg-zinc-400 bg-opacity-0 hover:bg-opacity-20 p-1 rounded transition-all">
+                            <a href={`https://twitch.tv/${streamer.name}`} target='_blank' className="flex gap-2 w-40 bg-zinc-400 bg-opacity-0 hover:bg-opacity-20 p-1 rounded transition-all">
                                 <Image height={50} width={50} src={streamer.pfp} className='rounded-full'/>
                                 <div className='my-auto flex flex-col'>
                                     <div className='font-semibold text-lg'>{streamer.name}</div>
@@ -37,7 +37,7 @@ export default function Sidebar({streamerObjects, sidebarVisible}) {
                 </>
             ):(
                 <div key={streamer.name} >
-                    <a href={`https://twitch.tv/${streamer.name}`} className="flex gap-2 w-40 bg-zinc-400 bg-opacity-0 hover:bg-opacity-20 p-1 rounded-xl transition-all">
+                    <a href={`https://twitch.tv/${streamer.name}`} target='_blank' className="flex gap-2 w-40 bg-zinc-400 bg-opacity-0 hover:bg-opacity-20 p-1 rounded-xl transition-all">
                         <Image height={50} width={50} src={streamer.pfp} className='rounded-full'/>
                         <div className='my-auto flex flex-col'>
                             <div className='font-semibold text-lg'>{streamer.name}</div>

@@ -12,18 +12,18 @@ export default function Footer() {
                 <Image src={whiteLogo} className=''/>
             </div>
             <div className='flex text-white gap-3 text-xl'>
-                <a href='https://twitter.com/OTKNetwork'><FaTwitter/></a>
-                <a href='https://www.twitch.tv/otknetwork'><FaTwitch/></a>
-                <a href='https://www.youtube.com/channel/UCgpRORu9JQFC_jtQeQ99hBA'><FaYoutube/></a>
-                <a href='https://www.instagram.com/otknetwork'><FaInstagram/></a>
-                <a href='https://www.tiktok.com/@theotknetwork'><FaTiktok/></a>
-                <a href='https://discord.com/invite/m8bgxM8'><FaDiscord/></a>
-                <a href='https://www.reddit.com/r/OTKNetwork'><FaRedditAlien/></a>
+                <a href='https://twitter.com/OTKNetwork' target='_blank'><FaTwitter/></a>
+                <a href='https://www.twitch.tv/otknetwork' target='_blank'><FaTwitch/></a>
+                <a href='https://www.youtube.com/channel/UCgpRORu9JQFC_jtQeQ99hBA' target='_blank'><FaYoutube/></a>
+                <a href='https://www.instagram.com/otknetwork' target='_blank'><FaInstagram/></a>
+                <a href='https://www.tiktok.com/@theotknetwork' target='_blank'><FaTiktok/></a>
+                <a href='https://discord.com/invite/m8bgxM8' target='_blank'><FaDiscord/></a>
+                <a href='https://www.reddit.com/r/OTKNetwork' target='_blank'><FaRedditAlien/></a>
                 <a href='mailto:partners@otknetwork.com'><FaRegEnvelope/></a>
             </div>
             <div className='m-auto text-sm text-center'>
                 <div className='text-white mx-auto'>Not an official site</div>
-                <a href='https://twitter.com/captinturt1e/' className='text-white mx-auto hover:text-blue-400 transition-all'>Made by captinturtle</a>
+                <a href='https://twitter.com/captinturt1e/' target='_blank' className='text-white mx-auto hover:text-blue-400 transition-all'>Made by captinturtle</a>
             </div>
         </div>
     </div>

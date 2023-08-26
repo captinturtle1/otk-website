@@ -15,9 +15,9 @@ export default function Events() {
                     <Image src={streamer.image2} className='rounded drop-shadow-xl'/>
                     <div className='m-auto mt-5 text-xl lg:text-2xl xl:text-xl'>{streamer.name}</div>
                     <div className='flex m-auto mt-5 gap-5 text-2xl lg:text-2xl'>
-                        <a href={streamer.youtube} className=''><FaYoutube/></a>
-                        <a href={streamer.twitch} className=''><FaTwitch/></a>
-                        <a href={streamer.twitter} className=''><FaTwitter/> </a>
+                        <a href={streamer.youtube} target='_blank' className=''><FaYoutube/></a>
+                        <a href={streamer.twitch} target='_blank' className=''><FaTwitch/></a>
+                        <a href={streamer.twitter} target='_blank' className=''><FaTwitter/> </a>
                     </div>
                 </div>
                 
