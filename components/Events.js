@@ -37,18 +37,18 @@ export default function Events() {
             {eventDetails.map((event, index) => 
                 <div key={event.name} className=''>
                     <div className='flex flex-col relative text-white font-bold text-xl min-[1600px]:text-2xl'>
-                        <div className='bg-yellow-400 flex flex-col h-[400px] w-[300px] min-[1600px]:h-[450px] min-[1600px]:w-[350px] mx-auto rounded-3xl'>
-                            <Image src={event.logo} className='w-[200px] min-[1600px]:w-[220px] absolute mx-auto left-0 right-0 -translate-y-24 z-10'/>
-                            <Image src={event.image} className='w-[344px] min-[1600px]:w-[400px] absolute rounded-xl left-0 right-0 mx-auto mt-8'/>
+                        <div className='bg-yellow-400 flex flex-col h-[400px] w-[300px] min-[1600px]:h-[450px] min-[1600px]:w-[350px] mx-auto rounded'>
+                            <Image src={event.logo} className='w-[200px] min-[1600px]:w-[220px] absolute mx-auto left-0 right-0 -translate-y-24 z-10 drop-shadow-lg'/>
+                            <Image src={event.image} className='w-[344px] min-[1600px]:w-[400px] absolute rounded left-0 right-0 mx-auto mt-8'/>
                             <div className='grow'/>
                             <div className='mb-10 ml-5 gap-3 flex flex-col'>
                                 <div className='flex gap-2'>
                                     <FaTv className='my-auto'/>
-                                    <div>{event.channel}</div>
+                                    <h1 className='drop-shadow'>{event.channel}</h1>
                                 </div>
                                 <div className='flex gap-2'>
                                     <FaRegClock className='my-auto'/>
-                                    <div suppressHydrationWarning>{unixToLocalDate(event.date)}</div>
+                                    <h1 className='drop-shadow' suppressHydrationWarning>{unixToLocalDate(event.date)}</h1>
                                 </div>
                             </div>
                         </div>

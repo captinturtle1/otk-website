@@ -43,7 +43,7 @@ export default function Hero({ recentMemberVideos }) {
                                     src={`https://www.youtube.com/embed/${item}`}
                                     title="YouTube video player"
                                     allowFullScreen
-                                    className='w-full h-full rounded-2xl'
+                                    className='w-full h-full rounded'
                                 />
                             </div>
                         </SwiperSlide>
