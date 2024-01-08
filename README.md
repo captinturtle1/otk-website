@@ -1,38 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# OTK.lol - Content Dashboard
 
-## Getting Started
+### Visit the live site at [otk.lol](https://otk.lol).
 
-First, run the development server:
+Welcome to OTK.lol, a web application built with Next.js and Tailwind CSS, designed to provide a streamlined dashboard for the content organization OTK.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Creators Directory:**
+   - Explore a comprehensive list of OTK creators.
+   - Access links to their various social media accounts.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+2. **Live Twitch Streams:**
+   - Stay updated with the current live Twitch streams of OTK members.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+3. **Latest YouTube Videos:**
+   - Watch the most recent YouTube content from OTK creators.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+4. **Upcoming Events:**
+   - Stay informed about upcoming events organized by OTK.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+5. **Merch Store Information:**
+   - Get details on the latest merchandise available from OTK.
 
-## Learn More
+## Data Sources
 
-To learn more about Next.js, take a look at the following resources:
+- **Twitch API:**
+  - Fetch real-time information on OTK members' live Twitch streams.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **YouTube API:**
+  - Retrieve the latest videos from OTK creators' YouTube channels.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## How to Use
 
-## Deploy on Vercel
+1. **Visit [https://otk.lol](https://otk.lol)**
+   - Explore the dashboard and discover the latest content from OTK.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Connect with Creators:**
+   - Follow links to social media accounts and engage with OTK members.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. **Stay Informed:**
+   - Keep track of live Twitch streams, upcoming events, and new YouTube videos.
+
+## Installation
+
+To run this application locally, follow these steps:
+
+1. Clone the repository:
+
+        git clone https://github.com/captinturtle1/otk-website
+
+2. Navigate to the project directory:
+
+        cd otk-website
+
+3. Install dependencies:
+
+        npm install
+
+4. Start the development server:
+
+        npm run dev
+
+The application should now be running at http://localhost:3000.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE). Feel free to use and modify the code according to your needs.
+
+---
+
+**Disclaimer:** OTK.lol is a third-party application and is not officially affiliated with OTK. All data is fetched from public APIs. The events and merch section are not automatically updated and may be out of date.
+
+Thank you for checking out OTK.lol! I hope you enjoy using the dashboard.
